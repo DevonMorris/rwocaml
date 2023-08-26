@@ -1,4 +1,4 @@
-open Base
+open Core
 open Stdio
 
 let rec read_and_accumulate_sum accum =
@@ -7,5 +7,4 @@ let rec read_and_accumulate_sum accum =
   | None -> accum
   | Some x -> read_and_accumulate_sum (accum +. Float.of_string x)
 
-let () =
-  printf "Total: %F\n" (read_and_accumulate_sum 0.)
+let () = printf "Total: %F\n" (read_and_accumulate_sum 0.)

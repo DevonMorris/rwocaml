@@ -1,4 +1,9 @@
 (executable
-  (name lis)
-  (libraries rwo)
-  (modules lis))
+ (name lis)
+ (libraries rwo)
+ (modules lis))
+
+(executable
+ (name rod)
+ (libraries rwo)
+ (modules rod))

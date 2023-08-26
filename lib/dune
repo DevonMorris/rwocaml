@@ -2,6 +2,5 @@
 
 (library
  (name rwo)
-  (modules lis lcs sum)
-  (libraries base stdio)
-)
+ (modules lis lcs sum rod)
+ (libraries core stdio))
