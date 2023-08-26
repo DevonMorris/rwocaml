@@ -1,4 +1,4 @@
 (executable
   (name lis)
-  (libraries lib)
+  (libraries rwo)
   (modules lis))
