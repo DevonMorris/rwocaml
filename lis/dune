@@ -1,3 +1,0 @@
-(executable
-  (name lis)
-  (libraries base))

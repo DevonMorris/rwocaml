@@ -1,0 +1,4 @@
+(executable
+  (name lis)
+  (libraries lib)
+  (modules lis))

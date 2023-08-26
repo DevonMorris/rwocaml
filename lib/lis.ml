@@ -15,8 +15,3 @@ let lis l =
                   aux tl tbl'
   in
   snd (List.fold_left max_by_snd (0, 0) (aux l []))
-
-let test = [5; 7; 4; -3; 9; 1; 10; 4; 5; 8; 9; 3]
-
-let () =
-  Printf.printf "%i\n" (lis test)

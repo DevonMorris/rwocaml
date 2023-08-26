@@ -1,0 +1,7 @@
+(include_subdirs unqualified)
+
+(library
+ (name lib)
+  (modules lis lcs sum)
+  (libraries base stdio)
+)
