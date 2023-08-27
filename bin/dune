@@ -7,3 +7,8 @@
  (name rod)
  (libraries rwo)
  (modules rod))
+
+(executable
+ (name lcs)
+ (libraries rwo)
+ (modules lcs))
