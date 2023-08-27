@@ -2,18 +2,12 @@ open Core
 
 (** Computes most profitable rods *)
 let profit_rods prices len =
-  let new_entry i j v =
-    match List.nth prices (i - j) with None -> 0 | Some c -> c + v
-  in
+  let new_entry i j v = List.nth_exn prices (i - j) |> ( + ) v in
   let rec aux tbl =
     let i = List.length tbl in
     if i = len then tbl
     else
-      let p =
-        match List.nth prices i with
-        | None -> raise (Invalid_argument "Unreachable")
-        | Some c -> c
-      in
+      let p = List.nth_exn prices i in
       let v' =
         tbl
         |> List.foldi ~init:Int.min_value ~f:(fun j acc v ->
@@ -22,4 +16,5 @@ let profit_rods prices len =
       in
       tbl @ [ v' ] |> aux
   in
-  aux [] |> List.fold ~init:Int.min_value ~f:max
+  let tbl = aux [] in
+  tbl |> List.fold ~init:Int.min_value ~f:max
