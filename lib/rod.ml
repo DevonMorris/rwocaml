@@ -9,7 +9,7 @@ let profit_rods prices len =
   in
   let new_entry i j v = List.nth_exn prices (i - j) |> ( + ) v in
   (* tbl here is (len of last rod, total price) *)
-  let rec aux tbl =
+  let rec build_table tbl =
     let i = List.length tbl in
     if i = len then tbl
     else
@@ -19,9 +19,9 @@ let profit_rods prices len =
       in
       let tbl' = (i + 1, p) :: tbl' in
       let v' = tbl' |> max_by_snd in
-      tbl @ [ v' ] |> aux
+      tbl @ [ v' ] |> build_table
   in
-  let tbl = aux [] in
+  let tbl = build_table [] in
   let max_v = tbl |> max_by_snd in
   (* compute the length of all rods *)
   let rec backtrack len_remain lens len_take =
